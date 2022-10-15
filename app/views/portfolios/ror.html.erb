@@ -1,0 +1,14 @@
+<h1>Ruby on Rails Portfolio Item</h1>
+<%= link_to 'New Portfolio', new_portfolio_path if logged_in?(:site_admin)%>
+<% @ror_portfolio_items.each do |portfolio|%>
+<p><%= link_to portfolio.title , portfolio_path(portfolio)%></p>
+<p> <em><%= portfolio.subtitle%></p></em> 
+<p><%= portfolio.body%></p>
+<p><%=  image_tag portfolio.thumb_image  if !portfolio.thumb_image.nil?%></p>
+
+
+<%#= 'show', portfolio_path(portfolio)%>
+<%= link_to 'Edit', edit_portfolio_path(portfolio) if logged_in?(:site_admin)%>
+<%= link_to 'Delete', portfolio, method:  :delete , data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)%>
+
+<%end%>	

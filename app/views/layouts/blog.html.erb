@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Devcamp4</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+            <!-- START OF NAV -->
+            <%= render 'shared/blog_nav'%>
+            <!-- END OF NAV -->
+            <!-- START OF BLOG HEADER -->
+            <%= render 'shared/blog_masthead'%>
+            <!-- END OF BLOG HEADER -->
+            <!-- START OF CONTAINER AND ROW ELEMENTS -->
+        <div class="container">
+          <div class="row">
+            <!-- END OF CONTAINER AND ROW ELEMENTS -->
+            <%= yield%> 
+            <!-- START OF SIDEBAR -->
+            <%= render 'shared/blog_sidebar'%> 
+            <!-- END OF SIDEBAR-->
+            <%= source_helper("Blog")%>
+          </div>
+        </div>
+           <%= render 'shared/footer'%>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<div class="album py-5 bg-light">
+	<div class="album text-muted m-5">
+	  <div class="container ">
+			<%= link_to 'New Portfolio', new_portfolio_path%>
+	    <div class="row ">
+			<%= render partial: 'portfolio_item' , collection: @portfolio_items%>
+		</div>
+	  </div>
+	</div>	
+</div>	
+
+
